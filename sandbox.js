@@ -1,34 +1,25 @@
-// Basics
-var character = 'mario';
-var age = 30;
-var isBlackBelt = false;
-character = 'luigi';
-age = 40;
-isBlackBelt = true;
-// Arrow function
-var circ = function (diameter) {
-    return diameter * Math.PI;
-};
-console.log(circ(30));
-// Arrays
-var names = ['john', 'rino', 'joseph'];
-names.push('new');
-var numbers = [10, 32, 34, 43];
-numbers.push(45);
-var mixed = ['sandy', 43, 'linda', 7, 12];
-mixed.push('filo');
-mixed.push(34);
-mixed[0] = 3;
-// Objects
-var ninja = {
-    name: 'mario',
-    belt: 'red',
-    age: 32
-};
-ninja.age = 40;
-ninja.name = 'vin';
-ninja = {
-    name: 'yoshe',
-    belt: 'black',
-    age: 99
-};
+// explicit types
+var character;
+var age;
+var isLoggedIn;
+age = 30;
+isLoggedIn = true;
+// arrays
+var ninjas;
+ninjas = ['yoshi', 'mario'];
+var push = [];
+push.push('shaun');
+// union types
+var mixed = [];
+mixed.push('hello');
+mixed.push(12);
+mixed.push(false);
+console.log(mixed);
+var uid;
+uid = '123';
+uid = 123;
+// objects
+var ninjaOne;
+ninjaOne = { name: 'yoshi', age: 24 };
+var ninjaTwo;
+ninjaTwo = { name: 'jane', age: 34, beltColor: 'grey' };
