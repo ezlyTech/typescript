@@ -1,19 +1,4 @@
-"use strict";
-// classes
-var Invoice = /** @class */ (function () {
-    // readonly client: string;
-    // private details: string;
-    // public amount: number;
-    function Invoice(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    Invoice.prototype.format = function () {
-        return "".concat(this.client, " owes $").concat(this.amount, " for ").concat(this.details);
-    };
-    return Invoice;
-}());
+import { Invoice } from './classes/Invoice.js';
 var invOne = new Invoice('mario', 'work on the mario website', 250);
 var invTwo = new Invoice('luisa', 'work on the luisa website', 300);
 var invoices = [];
