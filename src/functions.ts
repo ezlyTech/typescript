@@ -1,10 +1,10 @@
-let greet: Function;
+// let greet: Function;
 
-// greet = 'hello'
+// // greet = 'hello'
 
-greet = () => {
-    console.log('hello');
-}
+// greet = () => {
+//     console.log('hello');
+// }
 
 const add = (a: number, b: number, c:number | string = 10) => {
     console.log(a + b);
