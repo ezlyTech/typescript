@@ -1,28 +1,21 @@
-var me = {
-    name: 'shaun',
-    age: 23,
-    speak: function (text) {
-        console.log(text);
-    },
-    spend: function (amount) {
-        console.log('I spent', amount);
-        return amount;
-    }
-};
-var greetPerson = function (person) {
-    console.log('hello', person.name);
-};
-greetPerson(me);
-console.log(me);
 import { Invoice } from './classes/Invoice.js';
-var invOne = new Invoice('mario', 'work on the mario website', 250);
-var invTwo = new Invoice('luisa', 'work on the luisa website', 300);
-var invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-invoices.forEach(function (inv) {
-    console.log(inv.client, inv.amount, inv.format());
-});
+import { Payments } from './classes/Payments.js';
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+// docOne = new Invoice('yoshi', 'web work', 250);
+// docTwo = new Payments('mario', 'plumbing work', 200);
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+// console.log(docs)
+// const invOne = new Invoice('mario', 'work on the mario website', 250);
+// const invTwo = new Invoice('luisa', 'work on the luisa website', 300);
+// let invoices: Invoice[] = [];
+// invoices.push(invOne);
+// invoices.push(invTwo);
+// invoices.forEach(inv => {
+//     console.log(inv.client, inv.amount, inv.format());
+// });
 var form = document.querySelector('.new-item-form');
 // inputs
 var type = document.querySelector('#type');
@@ -31,5 +24,12 @@ var details = document.querySelector('#details');
 var amount = document.querySelector('#amount');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+    var doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payments(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });
